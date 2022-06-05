@@ -1,0 +1,9 @@
+.container {}
+
+.link:not(:last-child) {
+    margin-right: 14px;
+}
+
+.link {
+    font-size: 22px;
+}

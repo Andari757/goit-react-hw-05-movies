@@ -1,0 +1,16 @@
+.menu {
+    list-style: none;
+    padding: 14px;
+    font-size: 22px;
+    display: flex;
+    border-bottom: 1px solid black;
+    margin: 0;
+}
+
+.item:not(:last-child) {
+    margin-right: 15px;
+}
+
+.linkActive {
+    color: red;
+}

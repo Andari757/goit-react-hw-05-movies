@@ -1,12 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import PropTypes from 'prop-types';
 import styles from "./styles.module.css"
 import { items } from "./items";
 export default function Menu() {
+  const location = useLocation()
   const getActiveLink = ({ isActive }) => isActive ? styles.linkActive : styles.link;
   const elements = items.map(({ id, to, text }) => (
-    <li key={id}>
-      <NavLink className={getActiveLink} to={to}>{text}</NavLink>
+    <li className={styles.item} key={id}>
+      <NavLink className={getActiveLink} state={{ from: location }} to={to}>{text}</NavLink>
     </li>
   ))
 
