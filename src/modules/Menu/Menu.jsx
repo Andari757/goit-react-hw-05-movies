@@ -1,5 +1,4 @@
 import { NavLink, useLocation } from "react-router-dom";
-import PropTypes from 'prop-types';
 import styles from "./styles.module.css"
 import { items } from "./items";
 export default function Menu() {
@@ -18,12 +17,3 @@ export default function Menu() {
   )
 
 }
-Menu.propTypes = {
-  // bla: PropTypes.string,
-};
-
-Menu.defaultProps = {
-  // bla: 'test',
-};
-
-
