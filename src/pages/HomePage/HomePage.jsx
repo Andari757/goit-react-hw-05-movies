@@ -1,5 +1,5 @@
 
-import PropTypes from 'prop-types';
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MovieList from 'modules/MovieList/MovieList';
@@ -31,12 +31,4 @@ export default function HomePage() {
     </div>
   )
 }
-
-HomePage.propTypes = {
-  // bla: PropTypes.string,
-};
-
-HomePage.defaultProps = {
-  // bla: 'test',
-};
 

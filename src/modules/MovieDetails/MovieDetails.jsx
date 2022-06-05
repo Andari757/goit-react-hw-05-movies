@@ -1,4 +1,5 @@
 import s from "./styles.module.css"
+import PropTypes from 'prop-types';
 export default function MovieDetails({ movie }) {
 
     const getPoster = () => movie?.poster_path ? "https://image.tmdb.org/t/p/w500" + movie?.poster_path : null
@@ -18,4 +19,16 @@ export default function MovieDetails({ movie }) {
             </div>
         </>
     )
+}
+MovieDetails.defaultProps = {
+    movie: [],
+};
+MovieDetails.propTypes = {
+    movie: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        poster_path: PropTypes.string,
+        vote_average: PropTypes.number,
+        overview: PropTypes.string,
+        genres: PropTypes.array,
+    })
 }

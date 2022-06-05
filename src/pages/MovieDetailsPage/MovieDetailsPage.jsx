@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -44,12 +43,4 @@ export default function MovieDetailsPage() {
     </div>
   )
 }
-
-MovieDetailsPage.propTypes = {
-  // bla: PropTypes.string,
-};
-
-MovieDetailsPage.defaultProps = {
-  // bla: 'test',
-};
 
