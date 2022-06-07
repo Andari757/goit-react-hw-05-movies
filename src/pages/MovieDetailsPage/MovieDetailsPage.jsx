@@ -34,12 +34,12 @@ export default function MovieDetailsPage() {
       {movie.loading && <p>...loading</p>}
 
       {movie.data?.title && <MovieDetails movie={movie.data} />}
-      <Link className={s.link} state={location.state} to="cast" >
+      <span><Link className={s.link} state={location.state} to="cast" >
         Cast
-      </Link>
-      <Link className={s.link} state={location.state} to="reviews" >
+      </Link></span>
+      <span><Link className={s.link} state={location.state} to="reviews" >
         Reviews
-      </Link >
+      </Link ></span>
       <Outlet />
     </div >
   )
