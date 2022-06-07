@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MovieDetails from 'modules/MovieDetails/MovieDetails';
@@ -26,7 +26,6 @@ export default function MovieDetailsPage() {
     fetchMovie();
   }, [id]);
 
-  const location = useLocation();
   return (
     <div className={s.container}>
       <ButtonBack />
