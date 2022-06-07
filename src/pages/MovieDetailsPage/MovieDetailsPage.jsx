@@ -27,7 +27,6 @@ export default function MovieDetailsPage() {
     fetchMovie();
   }, [id]);
   const location = useLocation()
-  console.log(location)
   return (
     <div className={s.container}>
       <ButtonBack />
