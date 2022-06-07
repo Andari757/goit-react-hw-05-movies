@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useState, useEffect } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import MovieDetails from 'modules/MovieDetails/MovieDetails';
@@ -14,6 +14,7 @@ export default function MovieDetailsPage() {
   });
   const { id } = useParams();
   useEffect(() => {
+
     const fetchMovie = async () => {
       try {
         setMovie(prevState => ({ ...prevState, loading: true }));
@@ -25,17 +26,18 @@ export default function MovieDetailsPage() {
     };
     fetchMovie();
   }, [id]);
-
+  const location = useLocation()
+  console.log(location)
   return (
     <div className={s.container}>
       <ButtonBack />
       {movie.loading && <p>...loading</p>}
 
       {movie.data?.title && <MovieDetails movie={movie.data} />}
-      <Link className={s.link} to="cast" >
+      <Link className={s.link} state={{ from: location.state }} to="cast" >
         Cast
       </Link>
-      <Link className={s.link} to="reviews" >
+      <Link className={s.link} state={{ from: location.state }} to="reviews" >
         Reviews
       </Link>
       <Outlet />
